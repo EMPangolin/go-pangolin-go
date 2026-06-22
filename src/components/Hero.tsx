@@ -7,7 +7,6 @@ const Hero = () => {
   const [swapAmount, setSwapAmount] = useState('1.00');
   const [hasEdited, setHasEdited] = useState(false);
   const [reversed, setReversed] = useState(false);
-  const [avaxUsd, setAvaxUsd] = useState<number | null>(null);
   // Direct PNG/AVAX exchange rate (PNG denominated in AVAX) — the price of 1 PNG in AVAX.
   // Sourced as a single ratio from CoinGecko (vs_currencies=avax) instead of dividing two
   // independent USD spot prices, which drift apart by rounding and de-sync from real swaps.
@@ -40,7 +39,6 @@ const Hero = () => {
             volume: png.usd_24h_vol ?? 0,
           });
         }
-        if (avax?.usd) setAvaxUsd(avax.usd);
         if (png?.usd && avax?.usd) setPngInAvax(png.usd / avax.usd);
       })
       .catch(console.error);
