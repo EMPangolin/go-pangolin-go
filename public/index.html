@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pangolin | Trade, Earn & Swap on Avalanche First DEX</title>
+    <meta name="description" content="Pangolin, the leading multichain DEX on Avalanche, launched by AvaLabs in 2021. Swap tokens, provide liquidity, and earn rewards across AVAX, Hedera, Flare, and SGB." />
+    <meta name="keywords" content="Pangolin DEX, Avalanche DEX, multichain exchange, DeFi trading, PNG token, liquidity pools, cryptocurrency swap, Avalanche blockchain, earn AVAX" />
+    <meta name="author" content="Pangolin" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Pangolin | Trade, Earn & Swap on Avalanche First DEX" />
+    <meta property="og:description" content="Pangolin, the leading multichain DEX on Avalanche, launched by AvaLabs in 2021. Swap tokens, provide liquidity, and earn rewards across AVAX, Hedera, Flare, and SGB." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pangolin.exchange/" />
+    <meta property="og:image" content="https://pangolin.exchange/img/logo-dark-9m2OjO-5.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@pangolindex" />
+    <meta name="twitter:title" content="Pangolin | Trade, Earn & Swap on Avalanche First DEX" />
+    <meta name="twitter:description" content="Pangolin, the leading multichain DEX on Avalanche, launched by AvaLabs in 2021. Swap tokens, provide liquidity, and earn rewards." />
+    <meta name="twitter:image" content="https://pangolin.exchange/img/logo-dark-9m2OjO-5.svg" />
+    <link rel="canonical" href="https://pangolin.exchange/" />
+    <link rel="icon" type="image/svg+xml" href="/img/Icon.ico" />
+    <link rel="preload" href="/img/logo-dark-9m2OjO-5.svg" as="image" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Pangolin",
+        "url": "https://pangolin.exchange",
+        "logo": "https://pangolin.exchange/img/logo-dark-9m2OjO-5.svg",
+        "description": "Pangolin is a multichain decentralized exchange (DEX) on Avalanche, launched by AvaLabs in 2021. Swap tokens, provide liquidity, and earn rewards across AVAX, Hedera, Flare, and SGB.",
+        "sameAs": [
+          "https://x.com/pangolindex",
+          "https://t.me/pangolinv3",
+          "https://discord.gg/a6JJybnMhY",
+          "https://github.com/pangolindex/",
+          "https://pangolindex.medium.com/",
+          "https://www.reddit.com/r/PangolinExchange/",
+          "https://linktr.ee/pangolin.exchange"
+        ]
+      }
+    </script>
+
+    <!-- Tailwind CDN + config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["DM Sans", "system-ui", "sans-serif"],
+              display: ["Syne", "DM Sans", "system-ui", "sans-serif"],
+              mono: ["IBM Plex Mono", "ui-monospace", "monospace"]
+            },
+            colors: {
+              pangolin: {
+                50: "#fffbeb",
+                400: "#fbbf24",
+                500: "#f59e0b",
+                600: "#d97706"
+              },
+              surface: {
+                DEFAULT: "#0c0f14",
+                raised: "#12161e",
+                card: "rgba(18, 22, 30, 0.72)"
+              }
+            },
+            fontSize: {
+              base: ["1.125rem", "1.75rem"]
+            },
+            animation: {
+              marquee: "marquee 80s linear infinite",
+              float: "float 6s ease-in-out infinite",
+              "float-slow": "float 8s ease-in-out infinite",
+              "pulse-glow": "pulseGlow 4s ease-in-out infinite",
+              "slide-in": "slideIn .4s ease forwards",
+              "spin-slow": "spin 20s linear infinite"
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" }
+              },
+              slideIn: {
+                "0%": { transform: "translateX(100%)" },
+                "100%": { transform: "translateX(0)" }
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" }
+              },
+              pulseGlow: {
+                "0%, 100%": { opacity: "0.4" },
+                "50%": { opacity: "0.8" }
+              },
+              spin: {
+                "0%": { transform: "rotate(0deg)" },
+                "100%": { transform: "rotate(360deg)" }
+              }
+            }
+          }
+        }
+      };
+    </script>
+
+    <style>
+      :root {
+        --bg: #07090d;
+        --surface: rgba(14, 18, 26, 0.78);
+        --border: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(251, 191, 36, 0.35);
+        --accent: #fbbf24;
+        --accent-dim: rgba(251, 191, 36, 0.12);
+        --avax: #e84142;
+        --avax-dim: rgba(232, 65, 66, 0.14);
+        --text: #f4f4f5;
+        --muted: #94a3b8;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+      .mesh-bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse 80% 50% at 20% -10%, rgba(251, 191, 36, 0.14), transparent 55%),
+          radial-gradient(ellipse 60% 40% at 85% 10%, rgba(245, 158, 11, 0.08), transparent 50%),
+          radial-gradient(ellipse 50% 30% at 50% 100%, rgba(30, 41, 59, 0.5), transparent 60%);
+      }
+      .grid-bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 75%);
+      }
+      .app-shell { position: relative; z-index: 1; }
+      .glass {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .glass:hover { border-color: var(--border-hover); }
+      .glass-strong {
+        background: rgba(10, 12, 18, 0.92);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+        color: #0a0a0a;
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.2), 0 8px 32px rgba(245, 158, 11, 0.25);
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.05);
+        box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.4), 0 12px 40px rgba(245, 158, 11, 0.35);
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        color: var(--text);
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .section-label {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.875rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 500;
+      }
+      @media (min-width: 1024px) {
+        .section-label { font-size: 0.9375rem; }
+      }
+      .stat-num {
+        font-family: "IBM Plex Mono", monospace;
+        font-variant-numeric: tabular-nums;
+      }
+      .multichain {
+        background: linear-gradient(120deg, #fef08a 0%, #fbbf24 40%, #f59e0b 70%, #fcd34d 100%);
+        background-size: 200% auto;
+        animation: shimmer 6s linear infinite;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @keyframes shimmer {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 40s linear infinite;
+      }
+      .marquee-track:hover { animation-play-state: paused; }
+      .fade-edge {
+        mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+      }
+      .bento-card {
+        transition: border-color 0.25s ease, transform 0.25s ease;
+      }
+      .bento-card:hover {
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+      }
+      .font-display { font-family: "Syne", "DM Sans", system-ui, sans-serif; }
+      .display-xl {
+        font-family: "Syne", "DM Sans", system-ui, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        line-height: 1.06;
+      }
+      .display-lg {
+        font-family: "Syne", "DM Sans", system-ui, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.018em;
+        line-height: 1.1;
+      }
+      .dot-grid {
+        background-image: radial-gradient(rgba(255,255,255,0.22) 1px, transparent 1px);
+        background-size: 14px 14px;
+      }
+      .dot-grid-amber {
+        background-image: radial-gradient(rgba(251,191,36,0.28) 1px, transparent 1px);
+        background-size: 14px 14px;
+      }
+      .dot-grid-avax {
+        background-image: radial-gradient(rgba(232,65,66,0.32) 1px, transparent 1px);
+        background-size: 14px 14px;
+      }
+      .dot-grid-mask {
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%);
+      }
+      .label-eyebrow {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.8125rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(228, 228, 231, 0.75);
+      }
+      .label-stat {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.8125rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #a1a1aa;
+        font-weight: 500;
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+        animation: pulseGlow 6s ease-in-out infinite;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.7s cubic-bezier(0.2, 0, 0, 1), transform 0.7s cubic-bezier(0.2, 0, 0, 1);
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-delay-1 { transition-delay: 0.08s; }
+      .reveal-delay-2 { transition-delay: 0.16s; }
+      .reveal-delay-3 { transition-delay: 0.24s; }
+      .reveal-delay-4 { transition-delay: 0.32s; }
+      .glass-layer {
+        background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+        border: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 48px rgba(0,0,0,0.35);
+      }
+      .glass-layer:hover {
+        border-color: rgba(251, 191, 36, 0.25);
+      }
+      .nav-scrolled {
+        background: rgba(5, 5, 8, 0.88) !important;
+        box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4);
+      }
+      .swap-input:focus-within {
+        border-color: rgba(251, 191, 36, 0.35);
+        box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.08);
+      }
+      .swap-flip:active .swap-flip-icon {
+        transform: rotate(180deg);
+      }
+      .swap-flip-icon {
+        transition: transform 320ms cubic-bezier(0.65, 0, 0.35, 1);
+      }
+      .swap-flip:hover .swap-flip-icon {
+        transform: rotate(180deg);
+      }
+      .coin-field {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        max-width: 100vw;
+        z-index: 15;
+        pointer-events: none;
+        overflow: visible;
+      }
+      .coin-float {
+        position: absolute;
+        display: block;
+        border-radius: 9999px;
+        pointer-events: auto;
+        text-decoration: none;
+        cursor: pointer;
+        transition: filter 0.35s ease, opacity 0.35s ease;
+        animation: coinDrift var(--coin-dur, 14s) ease-in-out infinite;
+        animation-delay: var(--coin-delay, 0s);
+        will-change: transform;
+      }
+      .coin-float img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+        object-fit: cover;
+        pointer-events: none;
+        filter: blur(var(--coin-blur, 2px)) saturate(1.05);
+        opacity: var(--coin-opacity, 0.55);
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.35),
+          inset 0 -8px 18px rgba(0,0,0,0.35),
+          0 12px 40px rgba(0,0,0,0.45),
+          0 0 0 1px rgba(255,255,255,0.06);
+        transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+      }
+      .coin-float::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: 9999px;
+        background: radial-gradient(circle at 30% 22%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.12) 22%, transparent 55%);
+        mix-blend-mode: screen;
+        opacity: 0.7;
+      }
+      .coin-float:hover {
+        animation-play-state: paused;
+        z-index: 50;
+      }
+      .coin-float:hover img {
+        filter: blur(0px) saturate(1.2) brightness(1.08);
+        opacity: 1;
+        transform: scale(1.12);
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.5),
+          0 16px 48px rgba(251, 191, 36, 0.25),
+          0 0 0 1px rgba(255,255,255,0.18);
+      }
+      @keyframes coinDrift {
+        0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+        33%      { transform: translate3d(8px, -14px, 0) rotate(4deg); }
+        66%      { transform: translate3d(-6px, -8px, 0) rotate(-3deg); }
+      }
+      /* Mobile: hide every floating coin EXCEPT the two flagged via data-mobile-coin
+         (PNG + AVAX). Reposition those two into the top corners just below the
+         fixed nav (~64px) so they sit in the section's pt-28 (112px) header
+         padding and never overlap the headline, CTAs, or the swap card. */
+      @media (max-width: 1023px) {
+        .coin-float[data-hide-mobile="true"] { display: none !important; }
+        .coin-float[data-mobile-coin="png"] {
+          top: 84px !important;
+          left: 14px !important;
+          right: auto !important;
+          width: 42px !important;
+          height: 42px !important;
+          --coin-opacity: 0.55;
+          --coin-blur: 2px;
+        }
+        .coin-float[data-mobile-coin="avax"] {
+          top: 84px !important;
+          left: auto !important;
+          right: 14px !important;
+          width: 42px !important;
+          height: 42px !important;
+          --coin-opacity: 0.55;
+          --coin-blur: 2px;
+        }
+      }
+
+      /* ─── Back-to-top floating button (bottom-right) ─── */
+      .back-to-top {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+        color: #0a0a0a;
+        border: 1px solid rgba(251, 191, 36, 0.4);
+        box-shadow: 0 8px 28px rgba(245, 158, 11, 0.35), 0 0 0 1px rgba(251, 191, 36, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(16px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease, filter 0.2s ease, box-shadow 0.2s ease;
+        z-index: 60;
+      }
+      .back-to-top.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .back-to-top:hover {
+        filter: brightness(1.06);
+        box-shadow: 0 12px 36px rgba(245, 158, 11, 0.5), 0 0 0 1px rgba(251, 191, 36, 0.4);
+        transform: translateY(-2px);
+      }
+      .back-to-top i { font-size: 14px; }
+      @media (max-width: 640px) {
+        .back-to-top { bottom: 16px; right: 16px; width: 44px; height: 44px; }
+      }
+
+      /* ─── Social icons: brand-colored on hover ─── */
+      .social-chip {
+        --brand: #fbbf24;
+      }
+      .social-chip:hover {
+        border-color: color-mix(in srgb, var(--brand) 45%, transparent) !important;
+        background: color-mix(in srgb, var(--brand) 10%, rgba(255,255,255,0.04)) !important;
+        color: #fff !important;
+      }
+      .social-chip:hover .social-icon,
+      .social-chip:hover .social-svg {
+        color: var(--brand);
+        fill: var(--brand);
+      }
+      .social-icon, .social-svg {
+        transition: color 0.2s ease, fill 0.2s ease;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .marquee-track, .orb, .multichain, .coin-float { animation: none !important; }
+        .back-to-top { transition: none; }
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1065510120">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1065510120');
+</script>
+  </head>
+
+  <body class="text-base antialiased">
+    <div class="mesh-bg" aria-hidden="true"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="orb w-[420px] h-[420px] bg-amber-400/10 -top-32 -left-32" aria-hidden="true"></div>
+    <div class="orb w-[320px] h-[320px] bg-amber-500/8 top-1/3 -right-24 animate-float-slow" aria-hidden="true"></div>
+
+    <div id="root"></div>
+  </body>
+</html>
